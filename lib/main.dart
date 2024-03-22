@@ -2,6 +2,7 @@ import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test/bloc/bloc/feed_back_test_bloc.dart';
+import 'package:test/screen2.dart';
 
 void main() {
   runApp(
@@ -37,17 +38,21 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Test"),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'test screen',
-            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => const Screed2()));
+                },
+                child: const Text("Screen 1")),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
           await showDialog<void>(
             context: context,
@@ -64,7 +69,7 @@ class MyHomePage extends StatelessWidget {
             },
           );
         },
-        child: const Icon(Icons.add),
+        label: const Text("Bloc test"),
       ),
     );
   }
