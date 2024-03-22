@@ -13,8 +13,8 @@ class Screed2 extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () async {
             _showMyDialog(context);
-            await Future.delayed(const Duration(seconds: 3));
-            Navigator.pop(context);
+            // await Future.delayed(const Duration(seconds: 3));
+            // Navigator.pop(context);
           },
           child: const Text("Show dialogue"),
         ),
@@ -33,14 +33,14 @@ Future<void> _showMyDialog(BuildContext context) async {
         content: const SingleChildScrollView(
           child: ListBody(
             children: <Widget>[
-              Text('This is a demo alert dialog.'),
-              Text('Would you like to approve of this message?'),
+              Text('Please try to click device back button'),
+              Text('observe the result'),
             ],
           ),
         ),
         actions: <Widget>[
           TextButton(
-            child: const Text('Approve'),
+            child: const Text('OK'),
             onPressed: () {
               Navigator.of(context).pop();
             },

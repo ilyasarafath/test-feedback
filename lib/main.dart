@@ -47,7 +47,7 @@ class MyHomePage extends StatelessWidget {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (_) => const Screed2()));
                 },
-                child: const Text("Screen 1")),
+                child: const Text("Go to screen 2")),
           ],
         ),
       ),
